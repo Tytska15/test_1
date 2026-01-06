@@ -1,50 +1,34 @@
-numbers = [5, 12, 7, 20, 3, 8, 15, 2, 30]
+ages = [12, 25, 17, 40, 8, 19, 60, 14, 33]
 
-count = 0
-summa = 0
-max_num = numbers[0]
-min_num = numbers[0]
+adult_count = 0
+child_count = 0
+max_ages = ages[0]
+min_ages = ages[0]
+has_invalid = False
 
-for n in numbers:
-    if n > 10:
-        count += 1
-    if n <= 10:
-        summa += n
-    if n > max_num:
-        max_num = n
-    if n < min_num:
-        min_num = n
-        
-print("Max:", max_num)
-print("Min:", min_num)
-print(count)
-print(summa)
-
-
-
-numbers = [3, 10, 5, 8, 20, 7, 6, 15, 2]
-
-count_even = 0
-sum_odd = 0
-max_even = None
-min_odd = None
-
-for n in numbers:
-    if n % 2 == 0:
-        count_even += 1
-        
-        if max_even is None or n > max_even:
-            max_even = n
+for age in ages:
+    if age > 18:
+        adult_count += 1
     else:
-        sum_odd += n
-        
-        if min_odd is None or n < min_odd:
-            min_odd = n
+        child_count += 1
+    if age > max_ages:
+        max_ages = age
+    if age < min_ages:
+        min_ages = age
+    if age < 0 or age > 120:
+        has_invalid = True
+    
 
-print("Count even:", count_even)
-print("Sum odd:", sum_odd)
-print("Max even:", max_even)
-print("Min odd:", min_odd)
+
+print("Adults:", adult_count)
+print("Children:", child_count)
+print("Max age:", max_ages)
+print("Min age:", min_ages)
+print("Has invalid", has_invalid)
+
+
+
+
 
         
 
