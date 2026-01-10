@@ -1,0 +1,24 @@
+def is_valid_age(age):
+    return age >= 0 and age <= 120
+
+def run_tests(ages):
+    has_invalid = False
+
+    for age in ages:
+        if not is_valid_age(age):
+            print("Invalid age found", age)
+            has_invalid = True
+        
+        if has_invalid:
+            print("Test Failed")
+        else:
+            print("Test Passed")
+
+ages1 = [12, 25, 17, 40, 8, 19, 60, 14, 33]
+ages2 = [12, 25, -5, 40, 130, 19]
+
+print("Running test 1:")
+run_tests(ages1)
+
+print("\nRunning test 2:")
+run_tests(ages2)
